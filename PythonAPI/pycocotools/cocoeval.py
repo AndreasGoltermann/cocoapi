@@ -374,7 +374,7 @@ class COCOeval:
                         continue
                     tps = np.logical_and(               dtm,  np.logical_not(dtIg) )
                     fps = np.logical_and(np.logical_not(dtm), np.logical_not(dtIg) )
-                    tf.logging.info(tps)
+                    
                     tp_sum = np.cumsum(tps, axis=1).astype(dtype=np.float64)
                     fp_sum = np.cumsum(fps, axis=1).astype(dtype=np.float64)
                     for t, (tp, fp) in enumerate(zip(tp_sum, fp_sum)):
